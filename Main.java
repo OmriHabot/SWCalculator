@@ -10,7 +10,7 @@ public class Main
         int star = 0;
         int level = 1;
         int energy = 1;
-        int monXP = 0;
+        double monXP = 0;
         int rounds = 0, totalRounds = 0;
         double xp = 1;
         int totalEnergy = 0;
@@ -45,7 +45,7 @@ public class Main
             System.out.print("Current monster XP: ");
             monXP = keyboard.readInt();
             
-            rounds = (int)((Math.ceil(calc.maxLevel(star, level)-monXP)/xp));
+            rounds = (int)Math.ceil((calc.maxLevel(star, level, monXP))/xp);
             totalRounds += rounds;
             totalEnergy += rounds*energy;
             System.out.println("\nYou need to play " + rounds + " more rounds (" + (rounds*energy) + 
